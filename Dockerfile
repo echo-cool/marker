@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository ppa:alex-p/tesseract-ocr-devel && \
     apt-get update && \
-    apt-get install -y tesseract-ocr git curl ghostscript python3.9 python3-pip python3.9-venv && \
+    apt-get install -y tesseract-ocr git curl ghostscript python3 python3-pip python3-venv && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -23,7 +23,7 @@ RUN git clone https://github.com/VikParuchuri/marker.git
 WORKDIR /app/marker
 
 # Install Python requirements using Poetry
-# Update pytorch based on your system requirements (CPU/GPU)
+# Note: Adjust the PyTorch installation commands based on your target (CPU or GPU)
 RUN /root/.local/bin/poetry install && \
     /root/.local/bin/poetry run pip install torch
 
