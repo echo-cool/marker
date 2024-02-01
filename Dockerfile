@@ -28,6 +28,8 @@ RUN /root/.local/bin/poetry install
 # Add tessdata prefix environment variable
 # Adjust the tessdata path as necessary. This is an example path.
 ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata
+ENV TORCH_DEVICE=cpu
+
 
 # Expose volume for input and output
 VOLUME ["/data"]
