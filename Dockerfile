@@ -4,12 +4,12 @@ FROM ubuntu:latest
 # Set the working directory
 WORKDIR /app
 
-# Install system requirements
+# Install system requirements including libmagic
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository ppa:alex-p/tesseract-ocr-devel && \
     apt-get update && \
-    apt-get install -y tesseract-ocr git curl ghostscript python3 python3-pip python3-venv && \
+    apt-get install -y tesseract-ocr git curl ghostscript python3 python3-pip python3-venv libmagic1 libmagic-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
