@@ -5,13 +5,13 @@ FROM ubuntu:latest
 WORKDIR /app
 
 # Install system requirements including libmagic
-RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    add-apt-repository ppa:alex-p/tesseract-ocr-devel && \
-    apt-get update && \
-    apt-get install -y tesseract-ocr git curl ghostscript python3 python3-pip python3-venv libmagic1 libmagic-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository ppa:alex-p/tesseract-ocr-devel
+RUN apt-get update
+RUN apt-get install -y tesseract-ocr git curl ghostscript python3 python3-pip python3-venv libmagic1 libmagic-dev
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
 
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
