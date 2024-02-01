@@ -25,11 +25,6 @@ WORKDIR /app/marker
 # Install Python requirements using Poetry
 RUN /root/.local/bin/poetry install
 
-# Install PyTorch for CPU only
-# Note: Adjust the command below to install the correct version of PyTorch for your needs.
-# You might want to check https://pytorch.org for the latest command to install PyTorch for CPU.
-RUN /root/.local/bin/poetry run pip install torch==1.10.0+cpu torchvision==0.11.1+cpu torchaudio==0.10.0+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
-
 # Add tessdata prefix environment variable
 # Adjust the tessdata path as necessary. This is an example path.
 ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata
