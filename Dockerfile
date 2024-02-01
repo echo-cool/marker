@@ -24,7 +24,7 @@ WORKDIR /app/marker
 
 # Install Python requirements using Poetry
 RUN /root/.local/bin/poetry install
-RUN /root/.local/bin/poetry remove torch
+
 # Install PyTorch for CPU only
 # Note: Adjust the command below to install the correct version of PyTorch for your needs.
 # You might want to check https://pytorch.org for the latest command to install PyTorch for CPU.
